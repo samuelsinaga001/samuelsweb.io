@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+h3 {
+  color: #00a2c6;
+}
+
+footer {
+  padding: 20px;
+  color: white;
+  background: linear-gradient(to right, #3a7bd5, #000000);
+
+  text-align: center;
+  font-weight: bold;
+}
+
+nav a {
+  font-size: 18px;
+
+  font-weight: 400;
+  text-decoration: none;
+
+  color: white;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+.profile header {
+  text-align: center;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 450px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile img {
+  max-width: 200px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  padding: 20px;
+}
+
+.jumbotron {
+  font-size: 20px;
+  padding: 60px;
+  background: linear-gradient(to right, #3a7bd5, #000000);
+  text-align: center;
+  color: white;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav ul {
+  padding-inline: 4rem;
+  display: flex;
+
+  gap: 2rem;
+}
+
+nav {
+  background: linear-gradient(to right, #000000, #3a7bd5);
+  padding: 5px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  transition: text-shadow 0.3s ease; /* Animasi bayangan */
+}
+
+nav a:hover {
+  text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff; /* Bayangan neon */
+}
+
+main {
+  padding: 20px;
+
+  display: flex; /*  agar menjadi flex container */
+  gap: 1.5rem;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.slider-container img {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider-container button {
+  background: #00a2c6;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.slider-container button:hover {
+  background: #ff7e5f;
+}
+
+#content {
+  flex: 5;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+}
+
+/* Progress Bar Container */
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0; /* Warna latar belakang progress bar */
+  border-radius: 25px; /* Sudut yang lebih melengkung */
+  overflow: hidden;
+  position: relative;
+  height: 20px; /* Tinggi progress bar */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Efek bayangan di dalam */
+  z-index: 1;
+}
+
+/* Progress Bar Fill */
+.progress {
+  height: 100%;
+  background: linear-gradient(to right, #3a7bd5, #00d2ff); /* Gradient biru */
+  border-radius: 25px; /* Sudut yang lebih melengkung */
+  text-align: right;
+  padding-right: 10px; /* Jarak teks dari tepi kanan */
+  line-height: 20px; /* Sesuaikan dengan tinggi progress bar */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  transition: width 0.5s ease; /* Animasi perubahan lebar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Jarak antara ikon */
+  margin-top: 20px;
+}
+
+.social-icon {
+  font-size: 24px; /* Ukuran ikon */
+  color: #00a2c6; /* Warna ikon */
+  transition: color 0.3s ease, transform 0.3s ease; /* Animasi saat dihover */
+  text-decoration: none; /* Hilangkan garis bawah */
+}
+
+.social-icon:hover {
+  color: #ff7e5f; /* Warna ikon saat dihover */
+  transform: scale(1.3); /* Sedikit membesar saat dihover */
+}
+
+#contact h2 {
+  text-align: center; /* Teks diatur ke tengah */
+}
+
+#projects h2 {
+  text-align: center; /* Teks diatur ke tengah */
+}
+
+/* Optional: Animasi saat halaman dimuat */
+@keyframes loadProgress {
+  from { width: 0; }
+  to { width: attr(data-progress); }
+}
+
+.progress {
+  animation: loadProgress 1.5s ease-out; /* Animasi saat halaman dimuat */
+}
+
+aside {
+  flex: 1;
+}
+
+header {
+  display: inline;
+}
+
+@media screen and (max-width: 1000px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+}
+/* Perangkat dengan lebar layar 1200px dan di bawahnya */
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+
+  main aside {
+    align-self: center;
+  }
+}
+/* Perangkat dengan lebar layar 768px dan di bawahnya */
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+
+  #contact h2 {
+    font-size: 24px; /* Ukuran font lebih kecil untuk mobile */
+  }
+
+  main aside {
+    align-self: stretch;
+  }
+
+  .progress-bar {
+    height: 15px; /* Lebih kecil untuk mobile */
+  }
+  .progress {
+      font-size: 10px; /* Ukuran font lebih kecil */
+      line-height: 15px; /* Sesuaikan dengan tinggi progress bar */
+  }
+}
+
+/* Dark Mode Styling */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode nav {
+  background: linear-gradient(to right, #222, #444);
+}
+
+.dark-mode footer {
+  background: linear-gradient(to right, #222, #444);
+}
+
+.dark-mode .jumbotron {
+  background: linear-gradient(to right, #444, #000);
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.dark-mode .slider-container button {
+  background: #444;
+}
+
+.dark-mode .slider-container button:hover {
+  background: #00a2c6;
+}
